@@ -1,0 +1,80 @@
+<% layout('/layouts/boilerplate') %>
+
+<body>
+    <div class="container mt-5">
+        <!-- Search Bar with Suggestions -->
+        <div id="search-bar" class="d-flex justify-content-center mb-4">
+            <input type="text" id="search-input" class="form-control w-50" placeholder="Search by location or property...">
+            <button class="btn btn-primary ms-2">Search</button>
+            <ul id="search-suggestions" class="list-group d-none"></ul>
+        </div>
+
+        <!-- Filters Section (Sticky) -->
+        <div id="filter-section" class="d-flex justify-content-between mb-4 flex-wrap sticky-top bg-light p-3">
+            <!-- Location Filter -->
+            <div class="d-flex align-items-center filter-item">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                <span class="filter-text">Location</span>
+            </div>
+            <!-- Category Filter Dropdown -->
+            <div class="d-flex align-items-center filter-item">
+                <i class="fa-solid fa-bed me-2"></i>
+                <span class="filter-text">Category</span>
+                <select id="category-filter" class="form-select ms-2">
+                    <option value="">Select Category</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                </select>
+            </div>
+            <!-- Price Filter -->
+            <div class="d-flex align-items-center filter-item">
+                <i class="fa-solid fa-dollar-sign me-2"></i>
+                <span class="filter-text">Price</span>
+            </div>
+            <!-- Clear Filters -->
+            <button id="clear-filters" class="btn btn-secondary ms-2">Clear Filters</button>
+        </div>
+
+        <!-- Listings Section -->
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4" id="listings-container">
+            <% for (let listing of allListing) { %>
+            <a href="/listings/<%=listing._id%>" class="listing-link">
+                <div class="col">
+                    <div class="card listing-card shadow-lg border-0 rounded" style="width: 20rem;">
+                        <div class="listing-image-container">
+                            <img src="<%=listing.image.url%>" class="card-img-top listing-image" alt="listing_image">
+                            <div class="image-overlay">
+                                <span class="rating">
+                                    <i class="fa-solid fa-star"></i> <%=listing.rating%>
+                                </span>
+                                <button class="favorite-btn" data-id="<%=listing._id%>">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-dark" style="font-size: 1.2rem; font-weight: bold;">
+                                <%=listing.title%>
+                            </h5>
+                            <p class="card-text text-center text-dark" style="font-size: 1rem;">
+                                &#8377; <%=listing.price.toLocaleString("en-IN")%>/night
+                            </p>
+                            <p class="text-center text-muted" style="font-size: 0.9rem;"><%=listing.location%></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="d-flex justify-content-center mt-4">
+            <button id="prev-page" class="btn btn-outline-primary">Previous</button>
+            <span id="page-number" class="mx-3">Page 1</span>
+            <button id="next-page" class="btn btn-outline-primary">Next</button>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>

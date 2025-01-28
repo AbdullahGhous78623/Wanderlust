@@ -1,0 +1,1012 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Basic Styling for Navbar */
+.navbar {
+    background-color: #ffffff; /* Clean white background */
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-size: 16px;
+    padding: 10px 20px; /* Increased padding for width */
+}
+
+/* Compass Icon Styling */
+.navbar-brand i {
+    font-size: 36px; /* Larger compass icon size */
+    color: #ff385c; /* Airbnb Pink color */
+    margin-right: 10px; /* Space between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for Compass Icon */
+.navbar-brand i:hover {
+    transform: rotate(15deg) scale(1.1); /* Slight rotation and scaling on hover */
+    color: #ff5a75; /* Brighter pink on hover */
+}
+
+/* Navbar Brand Link (Logo) */
+.navbar-brand {
+    color: #ff385c; /* Airbnb's signature pink-red */
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Navbar Nav Links */
+.navbar-nav .nav-link {
+    color: #333333 !important; /* Darker font color (important to override bootstrap styles) */
+    font-weight: bold !important; /* Override bootstrap font weight */
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Hover Effect for Nav Links */
+.navbar-nav .nav-link:hover {
+    color: #ff385c; /* Airbnb pink-red on hover */
+    background-color: rgba(255, 56, 92, 0.1); /* Soft pink background */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Active Nav Link */
+.navbar-nav .nav-link.active {
+    color: #ff385c; /* Highlight active link */
+    font-weight: bold;
+    border-bottom: 2px solid #ff385c; /* Underline active link */
+}
+
+/* Centered Search Box */
+.navbar-nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+}
+
+.navbar-nav-center .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: #f8f9fa;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 100%;
+}
+
+.navbar-nav-center .search-input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    width: 80%;
+    margin-right: 10px;
+}
+
+.navbar-nav-center .search-input:focus {
+    border: 1px solid #ff385c; /* Focus effect with pink border */
+}
+
+.navbar-nav-center .search-icon {
+    font-size: 18px;
+    color: #ff385c;
+    cursor: pointer;
+}
+
+/* Right-aligned links */
+.navbar-nav.ms-auto {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Navbar Width */
+.container-fluid {
+    max-width: 1400px; /* Wider navbar */
+    margin: 0 auto; /* Center it */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .navbar-brand i {
+        font-size: 28px; /* Slightly smaller compass icon for mobile */
+    }
+
+    .navbar-nav-center .search-box {
+        flex-grow: 1;
+        max-width: 300px; /* Adjust width on smaller screens */
+    }
+
+    .navbar-nav-center .search-input {
+        width: 70%; /* Less width for input field on small screens */
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f8f9fa; /* Light grey background for the footer */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #555; /* Slightly darker text color */
+    border-top: 1px solid #ddd;
+}
+
+.f-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Social Media Icons */
+.f-info-socials i {
+    font-size: 24px; /* Increase the icon size */
+    margin: 0 10px;
+    color: #333; /* Default dark color */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Facebook Icon - Crystal Effect */
+.f-info-socials i.fa-facebook-square {
+    background: linear-gradient(45deg, #1877f2, #0e4b8f); /* Blue gradient background */
+    border-radius: 50%; /* Circular shape */
+    padding: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for 3D effect */
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adding crystal effect (facets) */
+.f-info-socials i.fa-facebook-square::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+}
+
+.f-info-socials i.fa-facebook-square:hover {
+    transform: scale(1.1) rotate(15deg); /* Slight zoom and rotation effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+
+/* Instagram Icon Color */
+.f-info-socials i.fa-instagram {
+    color: #e4405f; /* Instagram pink */
+}
+
+/* LinkedIn Icon Color */
+.f-info-socials i.fa-linkedin {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+/* Hover Effects for all social icons */
+.f-info-socials i:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Links Styling */
+.f-info-links {
+    margin-top: 10px;
+}
+
+.f-info-links a {
+    margin: 0 15px;
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for Privacy and Terms links */
+.f-info-links a:hover {
+    color: #007bff; /* Blue color on hover for links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .f-info {
+        padding: 0 15px;
+    }
+
+    .f-info-socials {
+        margin-bottom: 10px;
+    }
+
+    .f-info-links {
+        margin-top: 10px;
+    }
+
+    .f-info-links a {
+        margin: 0 10px;
+        font-size: 13px;
+    }
+}
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Image Styling */
+.listing-image {
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    width: 100% !important; /* Make image width 100% of the card's width */
+    border-radius: 5px 5px 0 0; /* Rounded corners for the top of the image */
+}
+
+/* Card Styling */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effects on Card */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Body Padding */
+.card-body {
+    padding: 15px !important;
+}
+
+/* Card Title and Price Styling */
+.card-title {
+    color: #333 !important; /* Darker color for title */
+}
+
+.card-text {
+    font-size: 1rem !important;
+    color: #ff385c !important; /* Price in Airbnb pink */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .listing-image {
+        height: 180px !important; /* Slightly smaller images on mobile */
+    }
+}
+.listing-link{
+    text-decoration:none;
+}
+/* Button Styling */
+.btn-submit {
+    background: linear-gradient(45deg, #ff4e50, #f9d423); /* Vibrant gradient */
+    color: #fff; /* Crisp white text */
+    font-weight: bold;
+    font-size: 16px; /* Modern size */
+    padding: 12px 24px; /* Balanced padding for elegance */
+    border: none;
+    border-radius: 30px; /* Smooth pill-shaped corners */
+    transition: all 0.4s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0 8px 15px rgba(255, 78, 80, 0.2); /* Soft glow shadow */
+    letter-spacing: 1px; /* Sleek letter spacing */
+    cursor: pointer;
+    text-transform: uppercase; /* Stylish uppercase letters */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Effect */
+.btn-submit:hover {
+    background: linear-gradient(45deg, #f12711, #f5af19); /* Brighter hover gradient */
+    box-shadow: 0 12px 20px rgba(241, 39, 17, 0.3); /* Enhanced shadow */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Button Active Effect */
+.btn-submit:active {
+    transform: scale(0.95); /* Slight shrink on click */
+    box-shadow: 0 4px 10px rgba(241, 39, 17, 0.4); /* Reduced shadow */
+}
+
+/* Glow Animation */
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* Subtle shine effect */
+    transform: skewX(-45deg);
+    transition: 0.6s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.btn-submit:hover::before {
+    left: 100%; /* Creates the sliding glow effect */
+}
+
+/* Focus State */
+.btn-submit:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 78, 80, 0.4); /* Glow focus */
+}
+/* Form Styling */
+form {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 20px; /* Padding for content spacing */
+    border-radius: 10px; /* Rounded corners for the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #e0e0e0; /* Light border for a defined form */
+}
+
+/* Input Fields */
+form .form-control {
+    border: 1px solid #ccc; /* Neutral border for inputs */
+    border-radius: 5px; /* Smooth corners */
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #ff385c; /* Airbnb pink focus */
+    box-shadow: 0 0 8px rgba(255, 56, 92, 0.3); /* Glow effect on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Labels */
+form .form-label {
+    font-weight: bold; /* Make labels prominent */
+    color: #333; /* Darker color for readability */
+}
+
+/* Button Styling */
+form button {
+    background: linear-gradient(45deg, #ff4e50, #f9d423); /* Attractive gradient */
+    color: white; /* Bright text color */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px; /* Adjusted size */
+    border: none;
+    border-radius: 30px; /* Smooth corners for elegance */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: linear-gradient(45deg, #f12711, #f5af19); /* Brighter gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(241, 39, 17, 0.3); /* Glow shadow */
+}
+
+form button:active {
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Adjustments for Mobile */
+@media (max-width: 768px) {
+    form {
+        padding: 15px; /* Slightly less padding for smaller screens */
+    }
+
+    form button {
+        font-size: 14px; /* Smaller font for mobile */
+        padding: 8px 16px;
+    }
+}
+/* Container Styling */
+#listing-container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Page Title */
+#listing-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+/* Card Styling */
+#listing-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Ensures that the buttons are stacked */
+}
+
+/* Image Styling */
+#listing-image {
+    width: 100%;
+    max-height: 550px;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Card Body */
+#listing-card-body {
+    padding: 20px;
+}
+
+/* Listing Title in Card */
+#listing-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Text Fields (Description, Price, Location) */
+#listing-description,
+#listing-price,
+#listing-location {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#listing-description strong,
+#listing-price strong,
+#listing-location strong {
+    font-weight: 600;
+    color: #222;
+}
+
+/* Actions Container */
+#listing-actions {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: flex-start; /* Left align the buttons */
+    margin-top: 20px; /* Adjust spacing from the other elements */
+}
+
+/* Edit Button */
+#listing-edit-btn {
+    background-color: #ff385c; /* Blue color */
+    color: white;
+    border: none;
+    padding: 5px 15px; /* Reduced padding to make height smaller */
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: none; /* Clean design without shadow */
+    height: 36px; /* Fixed height for Edit button */
+    margin-bottom: 10px; /* Space between Edit and Delete buttons */
+}
+
+#listing-edit-btn:hover {
+    background-color: #ff385c; /* Darker blue on hover */
+    text-decoration: none;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Delete Button */
+/* Independent Button Styling */
+#listing1-delete-btn {
+    background-color: #2c2f36; /* Crystal blackish color */
+    color: white;
+    border: none;
+    padding: 5px 15px; /* Same padding as before */
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: none; /* No shadow */
+    height: 36px; /* Fixed height */
+    margin-top: 10px; /* Space from form elements */
+}
+
+#listing1-delete-btn:hover {
+    background-color: #1c1f24; /* More crystal blackish (darker) on hover */
+    text-decoration: none;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Prevent form styling interference */
+.delete_ind {
+    display: inline; /* Ensures form doesn't alter the button's layout */
+    margin: 0;
+    padding: 0;
+    border: none; /* Remove any borders */
+    width: auto; /* Prevent form from taking up extra space */
+    background: none; /* No background */
+    box-shadow: none; /* No shadow */
+}
+
+.delete_ind button {
+    all: unset; /* Resets button to not inherit form styles */
+    display: inline-block; /* Keeps button inline with the form */
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes the full height of the viewport */
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Enable column layout */
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom when content is less */
+}
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Reduced height to leave space for the footer */
+    background-color: #fafafa;
+    font-family: sans-serif;
+  }
+  
+  .error-content {
+    text-align: center;
+  }
+  
+  .error-content h1 {
+    font-size: 36px; /* Larger heading */
+    color: #262626;
+    margin-bottom: 10px;
+  }
+  
+  .error-content p {
+    font-size: 18px; /* Larger paragraph text */
+    color: #8e8e8e;
+    margin: 10px 0;
+  }
+  
+  .error-content .link {
+    font-size: 18px;
+    color: #3897f0;
+    text-decoration: none;
+  }
+  
+  .error-content .link:hover {
+    text-decoration: underline;
+  }
+  .stylish-alert {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    animation: slideIn 0.5s ease, fadeOut 5s ease-in-out forwards;
+}
+
+.stylish-alert.alert-success {
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: #fff;
+    border: none;
+}
+
+.stylish-alert.alert-danger {
+    background: linear-gradient(90deg, #dc3545, #bd2130);
+    color: #fff;
+    border: none;
+}
+
+.stylish-alert .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+}
+.stylish-alert .btn-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0%, 80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+#rating-stars .star {
+    cursor: pointer;
+    font-size: 2rem; /* Increase size of stars */
+    transition: color 0.3s ease-in-out, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for stars */
+#rating-stars .star:hover {
+    transform: scale(1.2); /* Enlarge the stars on hover */
+}
+
+/* Selected (filled) star */
+#rating-stars .star.fa-solid {
+    color: gold; /* Color of the selected star */
+}
+
+/* Default (empty) star */
+#rating-stars .star.fa-regular {
+    color: gray; /* Color of the unselected star */
+}
+
+/* Optionally, you can add some spacing between stars */
+#rating-stars .star {
+    margin-right: 8px; /* Add spacing between stars */
+}
+/* Preloader Container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Preloader Hidden State */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Preloader Logo */
+.preloader-logo {
+    text-align: center;
+}
+
+/* Logo Image */
+.preloader-logo .logo {
+    width: 100px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Loader Dots Animation */
+.loader-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.loader-dots span {
+    width: 15px;
+    height: 15px;
+    background-color: #ff385c;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.loader-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Fade-in Animation for Logo */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bounce Animation for Dots */
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.mb-3 img {
+    border: 2px solid #ddd; /* Add a light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    max-width: 100%; /* Make it responsive */
+    display: block; /* Center the image */
+    margin: 0 auto;
+}
+#map {
+    width: 100%;
+    height: 400px;  /* Adjust height as necessary */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+/* Global Styling */
+/* Body and Global Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Search Bar Styling */
+#search-bar {
+    position: relative;
+}
+
+#search-input {
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #ff385c; /* Airbnb pink-red on focus */
+    outline: none;
+    box-shadow: 0 4px 6px rgba(255, 56, 92, 0.3); /* Soft pink shadow on focus */
+}
+
+#search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#search-suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#search-suggestions li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Filters Section */
+#filter-section {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.filter-item i {
+    font-size: 1.25rem;
+    color: #ff385c; /* Airbnb pink-red for icons */
+}
+
+.filter-text {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+#category-filter {
+    border-radius: 25px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#clear-filters {
+    background-color: #ff385c;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#clear-filters:hover {
+    background-color: #e32e55; /* Slightly darker pink on hover */
+}
+
+/* Listings Section */
+.listing-link {
+    text-decoration: none;
+}
+
+.listing-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.listing-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.listing-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.rating {
+    font-size: 1.1rem;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.favorite-btn:hover {
+    color: #ff5a5f; /* Brighter red for favorites */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Pagination */
+#pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#prev-page, #next-page {
+    background-color: #ff385c;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#prev-page:hover, #next-page:hover {
+    background-color: #e32e55;
+}
+
+#page-number {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    align-self: center;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    #search-input {
+        width: 100%;
+    }
+
+    .listing-card {
+        width: 100%;
+    }
+
+    .listing-image {
+        height: 180px;
+    }
+
+    #filter-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #category-filter {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Pagination for small screens */
+    #pagination {
+        flex-direction: column;
+        align-items: center;
+    }
+}
